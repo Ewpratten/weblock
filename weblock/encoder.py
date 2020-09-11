@@ -28,7 +28,7 @@ def encode_data(data: str, key: str) -> str:
         output.append(chr(ord(char) ^ ki))
     
     # Base64 encode data
-    return b64encode(("".join(output)).encode()).decode()
+    return b64encode(("".join(output)).encode("utf-8")).decode("utf-8")
 
 
 def decode_data(data, key):
@@ -42,7 +42,7 @@ def decode_data(data, key):
         str: Decoded output
     """
 
-    data = b64decode(data).decode()
+    data = b64decode(data).decode("utf-8")
 
     output = []
     for i, char in enumerate(data):

@@ -74,7 +74,7 @@
             var decoded_data = atob(external_data);
 
             // Run decode steps
-            var output = [];
+            var output = "";
             var i = 0;
             [...decoded_data].forEach((char) => {
 
@@ -86,14 +86,14 @@
 
                 // Run XOR step
                 var val = chr(ord(char) ^ ki);
-                output.push(val);
+                output += val;
 
                 // Incr index
                 i++;
             });
 
             // Overwrite document
-            $('html').html(output.join("") + )
+            $('html').html(output)
         }
     </script>
 
